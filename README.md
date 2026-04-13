@@ -14,4 +14,6 @@ let $contador := fn:count(//autor[. = $autores])
 where $contador > 1
 return <resultado>{data($autores)} - Total: {data($contador)} Libros </resultado>
 
+fn:count cuenta la cantidad de veces que una clase autor aparece y [. hace enfasis en el elemento (nodo) que se está evaluando en ese momento
+
 ## *RETO 3:* El Transformador (Constructor HTML)
