@@ -10,7 +10,8 @@ return <resultado>Titulo: {data($libro/titulo)}- Precio: {data($valor)}€ </res
 
 ## *RETO 2:* El Poder de LET (Agregación)
 for $autores in distinct-values(//autor)
-let $contador := fn:count(//autor = $autores)
-return <resultado>{data($autores)} - Total: {data($contador)} </resultado>
+let $contador := fn:count(//autor[. = $autores])
+where $contador > 1
+return <resultado>{data($autores)} - Total: {data($contador)} Libros </resultado>
 
 ## *RETO 3:* El Transformador (Constructor HTML)
